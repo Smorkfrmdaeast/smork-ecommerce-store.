@@ -3,90 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite E-Commerce Store</title>
+<title>SMORK E-COMMERCE STORE</title>
 
-<!-- Tailwind CSS CDN -->
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-body { background:#f5f5f5; color:#111; font-family:system-ui; }
-.hero-bg {
-  background: linear-gradient(135deg,#1e3a8a,#9333ea,#06b6d4);
-  min-height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white;
+body { background:#05060f; color:white; font-family:system-ui; overflow-x:hidden; }
+
+/* glass cards */
+.glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease; }
+.glass:hover { transform:translateY(-5px); }
+
+/* neon effect */
+.neon { box-shadow:0 0 20px #facc15; }
+
+/* hero motion */
+.hero-bg{
+  background: url('images/hero.jpg') center/cover no-repeat;
+  min-height:100vh;
+  display:flex; 
+  flex-direction:column; 
+  justify-content:center; 
+  align-items:center; 
+  text-align:center;
+  padding:2rem;
+  animation: zoom 15s infinite alternate ease-in-out;
 }
-.glass { background:rgba(255,255,255,0.1); backdrop-filter:blur(12px); border-radius:12px; border:1px solid rgba(255,255,255,0.15); }
-.neon { box-shadow:0 0 20px #3b82f6; }
-.product-card { transition: all 0.3s ease; }
-.product-card:hover { transform: translateY(-8px) scale(1.03); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-button { transition:all 0.2s; cursor:pointer; }
+@keyframes zoom{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+
+/* buttons */
+.btn { transition: all 0.3s ease; }
+.btn:hover { transform: scale(1.05); }
+
 </style>
 </head>
+
 <body>
 
 <!-- HERO -->
-<section class="hero-bg px-6">
-<h1 class="text-5xl md:text-6xl font-bold mb-4">🛒 ELITE E-COMMERCE STORE</h1>
-<p class="max-w-2xl text-lg mb-6">
-Discover premium products, add to cart, and connect instantly via WhatsApp to order. Professional e-commerce experience.
-</p>
-<button onclick="scrollToSection('products')" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl neon">
-Browse Products
+<section class="hero-bg">
+<h1 class="text-5xl md:text-6xl font-bold mb-6">🛒 SMORK E-COMMERCE STORE</h1>
+<p class="text-gray-300 max-w-xl mb-6">Shop top products with ease. Add to cart, and chat instantly on WhatsApp.</p>
+<button onclick="scrollToSection('products')" class="bg-yellow-500 hover:bg-yellow-400 px-6 py-3 rounded-xl neon btn">
+Shop Now
 </button>
 </section>
 
-<!-- PRODUCTS GRID -->
-<section id="products" class="py-20 px-6 max-w-7xl mx-auto">
-<h2 class="text-3xl font-bold mb-12 text-center">Featured Products</h2>
-<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+<!-- PRODUCTS -->
+<section id="products" class="py-20 px-6 max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold mb-12 text-center">Our Products</h2>
 
-<!-- Product 1 -->
-<div class="glass p-4 text-center rounded-xl product-card bg-white/10">
-  <img src="images/headphones.jpg" alt="Headphones" class="mx-auto mb-4 rounded-lg object-cover h-48 w-full">
-  <h3 class="font-bold mb-2 text-xl">Wireless Headphones</h3>
-  <p class="text-gray-300 mb-2 font-semibold">₦12,000</p>
-  <button onclick="addToCartWA('Wireless Headphones',12000,this)" class="w-full bg-blue-500 hover:bg-blue-600 py-2 rounded text-white font-bold neon">
-    Add to Cart
-  </button>
-</div>
-
-<!-- Product 2 -->
-<div class="glass p-4 text-center rounded-xl product-card bg-white/10">
-  <img src="images/sneakers.jpg" alt="Sneakers" class="mx-auto mb-4 rounded-lg object-cover h-48 w-full">
-  <h3 class="font-bold mb-2 text-xl">Stylish Sneakers</h3>
-  <p class="text-gray-300 mb-2 font-semibold">₦18,500</p>
-  <button onclick="addToCartWA('Stylish Sneakers',18500,this)" class="w-full bg-blue-500 hover:bg-blue-600 py-2 rounded text-white font-bold neon">
-    Add to Cart
-  </button>
-</div>
-
-<!-- Product 3 -->
-<div class="glass p-4 text-center rounded-xl product-card bg-white/10">
-  <img src="images/smartwatch.jpg" alt="Smartwatch" class="mx-auto mb-4 rounded-lg object-cover h-48 w-full">
-  <h3 class="font-bold mb-2 text-xl">Smartwatch</h3>
-  <p class="text-gray-300 mb-2 font-semibold">₦22,000</p>
-  <button onclick="addToCartWA('Smartwatch',22000,this)" class="w-full bg-blue-500 hover:bg-blue-600 py-2 rounded text-white font-bold neon">
-    Add to Cart
-  </button>
-</div>
-
-<!-- Product 4 -->
-<div class="glass p-4 text-center rounded-xl product-card bg-white/10">
-  <img src="images/laptop.jpg" alt="Laptop" class="mx-auto mb-4 rounded-lg object-cover h-48 w-full">
-  <h3 class="font-bold mb-2 text-xl">Laptop</h3>
-  <p class="text-gray-300 mb-2 font-semibold">₦150,000</p>
-  <button onclick="addToCartWA('Laptop',150000,this)" class="w-full bg-blue-500 hover:bg-blue-600 py-2 rounded text-white font-bold neon">
-    Add to Cart
-  </button>
-</div>
-
+<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+  <!-- Product 1 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/headphone.jpg" alt="Headphone" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Headphone</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦15,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Headphone')">Add to Cart</button>
+  </div>
+  <!-- Product 2 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/smartwatch.jpg" alt="Smartwatch" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Smartwatch</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦22,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
+  </div>
+  <!-- Product 3 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/laptop.jpg" alt="Laptop" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Laptop</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦150,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Laptop')">Add to Cart</button>
+  </div>
+  <!-- Product 4 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/camera.jpg" alt="Camera" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Camera</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦75,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Camera')">Add to Cart</button>
+  </div>
+  <!-- Product 5 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/speaker.jpg" alt="Speaker" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Speaker</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦18,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Speaker')">Add to Cart</button>
+  </div>
+  <!-- Product 6 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/keyboard.jpg" alt="Keyboard" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Keyboard</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦8,500</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Keyboard')">Add to Cart</button>
+  </div>
+  <!-- Product 7 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/mouse.jpg" alt="Mouse" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Mouse</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦5,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Mouse')">Add to Cart</button>
+  </div>
+  <!-- Product 8 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/monitor.jpg" alt="Monitor" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Monitor</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦60,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Monitor')">Add to Cart</button>
+  </div>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-10 text-center text-gray-300 border-t border-gray-700">
+<footer class="py-10 text-center text-gray-400 border-t border-gray-800">
 <p class="mb-4">Built by SMORK</p>
 <div class="flex justify-center gap-6 text-xl mb-4">
   <a href="https://github.com/Smorkfrmdaeast"><i class="fa-brands fa-github"></i></a>
@@ -97,6 +133,8 @@ Browse Products
 <p>Contact: ifeanyinuels32@gmail.com</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- Link external JS -->
+<script src="js/script.js"></script>
+
 </body>
 </html>
