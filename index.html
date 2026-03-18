@@ -23,20 +23,17 @@ body { background:#05060f; color:white; font-family:system-ui; overflow-x:hidden
 
 /* hero motion */
 .hero-bg{
-  background: url('images/hero.jpg') center/cover no-repeat;
-  min-height:100vh;
-  display:flex; 
-  flex-direction:column; 
-  justify-content:center; 
-  align-items:center; 
-  text-align:center;
-  padding:2rem;
-  animation: zoom 15s infinite alternate ease-in-out;
+background: url('images/hero.jpg') center/cover no-repeat;
+min-height:100vh;
+display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+padding:2rem;
+animation: zoom 15s infinite alternate ease-in-out;
 }
+
 @keyframes zoom{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-  100%{transform:scale(1);}
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
 /* buttons */
@@ -64,59 +61,59 @@ Shop Now
 <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
   <!-- Product 1 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/headphone.jpg" alt="Headphone" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/headphones.jpg" alt="Headphone" class="w-full h-48 object-cover mb-3 rounded"/>
     <h3 class="font-bold text-lg">Headphone</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦15,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Headphone')">Add to Cart</button>
   </div>
   <!-- Product 2 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/smartwatch.jpg" alt="Smartwatch" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Smartwatch</h3>
+    <img src="images/sneakers.jpg" alt="Sneakers" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Sneakers</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦22,000</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Sneakers')">Add to Cart</button>
   </div>
   <!-- Product 3 -->
+  <div class="glass p-4 rounded-xl text-center">
+    <img src="images/smartwatch.jpg" alt="Smartwatch" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Smartwatch</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦20,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
+  </div>
+  <!-- Product 4 -->
   <div class="glass p-4 rounded-xl text-center">
     <img src="images/laptop.jpg" alt="Laptop" class="w-full h-48 object-cover mb-3 rounded"/>
     <h3 class="font-bold text-lg">Laptop</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦150,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Laptop')">Add to Cart</button>
   </div>
-  <!-- Product 4 -->
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/camera.jpg" alt="Camera" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Camera</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦75,000</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Camera')">Add to Cart</button>
-  </div>
   <!-- Product 5 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/speaker.jpg" alt="Speaker" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Speaker</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦18,000</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Speaker')">Add to Cart</button>
+    <img src="images/phone.jpg" alt="Phone" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Phone</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦120,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Phone')">Add to Cart</button>
   </div>
   <!-- Product 6 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/keyboard.jpg" alt="Keyboard" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Keyboard</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦8,500</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Keyboard')">Add to Cart</button>
+    <img src="images/backpack.jpg" alt="Backpack" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Backpack</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦12,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Backpack')">Add to Cart</button>
   </div>
   <!-- Product 7 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/mouse.jpg" alt="Mouse" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Mouse</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦5,000</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Mouse')">Add to Cart</button>
+    <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Sunglasses</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦8,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Sunglasses')">Add to Cart</button>
   </div>
   <!-- Product 8 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/monitor.jpg" alt="Monitor" class="w-full h-48 object-cover mb-3 rounded"/>
-    <h3 class="font-bold text-lg">Monitor</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦60,000</p>
-    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Monitor')">Add to Cart</button>
+    <img src="images/hoodie.jpg" alt="Hoodie" class="w-full h-48 object-cover mb-3 rounded"/>
+    <h3 class="font-bold text-lg">Hoodie</h3>
+    <p class="text-yellow-400 font-semibold mb-3">₦10,000</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Hoodie')">Add to Cart</button>
   </div>
 </div>
 </section>
@@ -133,8 +130,19 @@ Shop Now
 <p>Contact: ifeanyinuels32@gmail.com</p>
 </footer>
 
-<!-- Link external JS -->
-<script src="js/script.js"></script>
+<script>
+// Smooth scroll
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+// Add to cart → WhatsApp
+function addToCart(product){
+  const url = `https://wa.me/2349019071679?text=I WANT ${encodeURIComponent(product)}`;
+  alert(`${product} ADDED TO CART ✅`);
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
