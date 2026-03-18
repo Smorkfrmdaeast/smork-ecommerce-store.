@@ -40,6 +40,16 @@ animation: zoom 15s infinite alternate ease-in-out;
 .btn { transition: all 0.3s ease; }
 .btn:hover { transform: scale(1.05); }
 
+/* lightbox overlay */
+#lightboxOverlay {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.9); display:flex; justify-content:center; align-items:center;
+  visibility:hidden; opacity:0; transition: opacity 0.3s ease;
+  z-index:50;
+}
+#lightboxOverlay img { max-width:90%; max-height:80%; border-radius:8px; }
+#lightboxOverlay.visible { visibility:visible; opacity:1; }
+#lightboxOverlay span { position:absolute; top:2rem; right:2rem; font-size:2rem; cursor:pointer; color:white; }
 </style>
 </head>
 
@@ -61,62 +71,68 @@ Shop Now
 <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
   <!-- Product 1 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/headphones.jpg" alt="Headphone" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/headphones.jpg" alt="Headphone" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/headphones.jpg')"/>
     <h3 class="font-bold text-lg">Headphone</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦15,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Headphone')">Add to Cart</button>
   </div>
   <!-- Product 2 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/sneakers.jpg" alt="Sneakers" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/sneakers.jpg" alt="Sneakers" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/sneakers.jpg')"/>
     <h3 class="font-bold text-lg">Sneakers</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦22,000</p>
+    <p class="text-yellow-400 font-semibold mb-3">₦25,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Sneakers')">Add to Cart</button>
   </div>
   <!-- Product 3 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/smartwatch.jpg" alt="Smartwatch" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/smartwatch.jpg" alt="Smartwatch" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/smartwatch.jpg')"/>
     <h3 class="font-bold text-lg">Smartwatch</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦20,000</p>
+    <p class="text-yellow-400 font-semibold mb-3">₦22,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
   </div>
   <!-- Product 4 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/laptop.jpg" alt="Laptop" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/laptop.jpg" alt="Laptop" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/laptop.jpg')"/>
     <h3 class="font-bold text-lg">Laptop</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦150,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Laptop')">Add to Cart</button>
   </div>
   <!-- Product 5 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/phone.jpg" alt="Phone" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/phone.jpg" alt="Phone" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/phone.jpg')"/>
     <h3 class="font-bold text-lg">Phone</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦120,000</p>
+    <p class="text-yellow-400 font-semibold mb-3">₦90,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Phone')">Add to Cart</button>
   </div>
   <!-- Product 6 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/backpack.jpg" alt="Backpack" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/backpack.jpg" alt="Backpack" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/backpack.jpg')"/>
     <h3 class="font-bold text-lg">Backpack</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦12,000</p>
+    <p class="text-yellow-400 font-semibold mb-3">₦18,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Backpack')">Add to Cart</button>
   </div>
   <!-- Product 7 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/sunglasses.jpg')"/>
     <h3 class="font-bold text-lg">Sunglasses</h3>
-    <p class="text-yellow-400 font-semibold mb-3">₦8,000</p>
+    <p class="text-yellow-400 font-semibold mb-3">₦12,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Sunglasses')">Add to Cart</button>
   </div>
   <!-- Product 8 -->
   <div class="glass p-4 rounded-xl text-center">
-    <img src="images/hoodie.jpg" alt="Hoodie" class="w-full h-48 object-cover mb-3 rounded"/>
+    <img src="images/hoodie.jpg" alt="Hoodie" class="w-full h-48 object-cover mb-3 rounded cursor-pointer" onclick="openLightbox('images/hoodie.jpg')"/>
     <h3 class="font-bold text-lg">Hoodie</h3>
     <p class="text-yellow-400 font-semibold mb-3">₦10,000</p>
     <button class="bg-yellow-500 px-4 py-2 rounded btn" onclick="addToCart('Hoodie')">Add to Cart</button>
   </div>
 </div>
 </section>
+
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightboxOverlay" onclick="closeLightbox()">
+  <span>&times;</span>
+  <img src="" alt="Preview"/>
+</div>
 
 <!-- FOOTER -->
 <footer class="py-10 text-center text-gray-400 border-t border-gray-800">
@@ -141,6 +157,19 @@ function addToCart(product){
   const url = `https://wa.me/2349019071679?text=I WANT ${encodeURIComponent(product)}`;
   alert(`${product} ADDED TO CART ✅`);
   window.open(url, "_blank");
+}
+
+// LIGHTBOX FUNCTIONS
+function openLightbox(src){
+  const overlay = document.getElementById('lightboxOverlay');
+  const img = overlay.querySelector('img');
+  img.src = src;
+  overlay.classList.add('visible');
+}
+
+function closeLightbox(e){
+  if(e.target.tagName === 'IMG') return; // click on image does not close
+  document.getElementById('lightboxOverlay').classList.remove('visible');
 }
 </script>
 
