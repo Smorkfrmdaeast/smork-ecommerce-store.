@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMORK E-COMMERCE STORE</title>
+<title>Elite E-Commerce Store</title>
 
-<!-- Tailwind CSS CDN -->
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- FontAwesome Icons -->
@@ -15,89 +15,75 @@
 body { background:#05060f; color:white; font-family:system-ui; }
 .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); }
 .neon { box-shadow:0 0 20px #3b82f6; }
-.hero-bg{ background:radial-gradient(circle at 20% 20%,#1e3a8a,transparent), radial-gradient(circle at 80% 30%,#9333ea,transparent), radial-gradient(circle at 50% 80%,#06b6d4,transparent); min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; }
-input, select, textarea { color:black; }
+.hero-bg{ background:radial-gradient(circle at 20% 20%,#1e3a8a,transparent), radial-gradient(circle at 80% 30%,#9333ea,transparent), radial-gradient(circle at 50% 80%,#06b6d4,transparent); min-height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; }
+h1, h2, h3 { font-weight:700; }
+button { cursor:pointer; transition:all 0.2s; }
 </style>
 </head>
-
 <body>
 
 <!-- HERO -->
-<section class="hero-bg text-center">
-<h1 class="text-5xl md:text-6xl font-bold mb-6">🛒 SMORK E-COMMERCE STORE</h1>
-<p class="text-gray-300 max-w-xl mb-6">
-Browse products, add to cart, and enjoy smooth shopping experience with our high-quality UI.
-</p>
-<button onclick="scrollToSection('products')" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl neon">
-Explore Products
-</button>
+<section class="hero-bg">
+  <h1 class="text-5xl md:text-6xl font-bold mb-4">🛒 ELITE E-COMMERCE STORE</h1>
+  <p class="text-gray-300 max-w-xl mb-6">
+    Browse our products, add to cart, and instantly contact via WhatsApp for purchase.
+  </p>
+  <button onclick="scrollToSection('products')" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl neon">
+    View Products
+  </button>
 </section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS GRID -->
 <section id="products" class="py-20 px-6 max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold mb-12 text-center">Featured Products</h2>
+<h2 class="text-3xl font-bold mb-12 text-center">Our Products</h2>
 
 <div class="grid md:grid-cols-4 gap-6">
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/headphones.jpg" alt="AirFlex Headphones" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">AirFlex Headphones</h3>
-    <p class="text-gray-400 mb-2">$120</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
+
+  <!-- Product 1 -->
+  <div class="glass p-4 text-center rounded-xl">
+    <img src="images/headphones.jpg" alt="Headphones" class="mx-auto mb-4 rounded-lg">
+    <h3 class="font-bold mb-2">Wireless Headphones</h3>
+    <p class="text-gray-400 mb-2">₦12,000</p>
+    <button onclick="addToCartWA('Wireless Headphones',12000,this)" class="bg-blue-500 px-4 py-2 rounded neon">
+      Add to Cart
+    </button>
   </div>
 
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/sneakers.jpg" alt="AirRun Sneakers" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">AirRun Sneakers</h3>
-    <p class="text-gray-400 mb-2">$95</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
+  <!-- Product 2 -->
+  <div class="glass p-4 text-center rounded-xl">
+    <img src="images/sneakers.jpg" alt="Sneakers" class="mx-auto mb-4 rounded-lg">
+    <h3 class="font-bold mb-2">Stylish Sneakers</h3>
+    <p class="text-gray-400 mb-2">₦18,500</p>
+    <button onclick="addToCartWA('Stylish Sneakers',18500,this)" class="bg-blue-500 px-4 py-2 rounded neon">
+      Add to Cart
+    </button>
   </div>
 
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/smartwatch.jpg" alt="TimeTech Smartwatch" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">TimeTech Smartwatch</h3>
-    <p class="text-gray-400 mb-2">$180</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
+  <!-- Product 3 -->
+  <div class="glass p-4 text-center rounded-xl">
+    <img src="images/smartwatch.jpg" alt="Smartwatch" class="mx-auto mb-4 rounded-lg">
+    <h3 class="font-bold mb-2">Smartwatch</h3>
+    <p class="text-gray-400 mb-2">₦22,000</p>
+    <button onclick="addToCartWA('Smartwatch',22000,this)" class="bg-blue-500 px-4 py-2 rounded neon">
+      Add to Cart
+    </button>
   </div>
 
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/laptop.jpg" alt="ProBook Laptop" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">ProBook Laptop</h3>
-    <p class="text-gray-400 mb-2">$950</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
+  <!-- Product 4 -->
+  <div class="glass p-4 text-center rounded-xl">
+    <img src="images/laptop.jpg" alt="Laptop" class="mx-auto mb-4 rounded-lg">
+    <h3 class="font-bold mb-2">Laptop</h3>
+    <p class="text-gray-400 mb-2">₦150,000</p>
+    <button onclick="addToCartWA('Laptop',150000,this)" class="bg-blue-500 px-4 py-2 rounded neon">
+      Add to Cart
+    </button>
   </div>
 
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/phone.jpg" alt="SmartPhone X" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">SmartPhone X</h3>
-    <p class="text-gray-400 mb-2">$650</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
-  </div>
-
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/backpack.jpg" alt="Adventure Backpack" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">Adventure Backpack</h3>
-    <p class="text-gray-400 mb-2">$55</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
-  </div>
-
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/sunglasses.jpg" alt="Solar Shades" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">Solar Shades</h3>
-    <p class="text-gray-400 mb-2">$35</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
-  </div>
-
-  <div class="glass p-4 rounded-xl text-center">
-    <img src="images/hoodie.jpg" alt="Neo Hoodie" class="h-40 w-full object-cover rounded mb-3"/>
-    <h3 class="font-bold mb-1">Neo Hoodie</h3>
-    <p class="text-gray-400 mb-2">$50</p>
-    <button class="bg-blue-500 px-4 py-2 rounded">Add to Cart</button>
-  </div>
 </div>
 </section>
 
-<!-- SOCIAL LINKS -->
-<footer class="py-10 text-center text-gray-400 border-t border-gray-800">
+<!-- FOOTER -->
+<footer class="py-10 text-center text-gray-400 border-t border-gray-800 mt-20">
 <p class="mb-4">Built by SMORK</p>
 <div class="flex justify-center gap-6 text-xl mb-4">
   <a href="https://github.com/Smorkfrmdaeast"><i class="fa-brands fa-github"></i></a>
@@ -108,11 +94,8 @@ Explore Products
 <p>Contact: ifeanyinuels32@gmail.com</p>
 </footer>
 
-<script>
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-</script>
+<!-- LINK TO EXTERNAL JS -->
+<script src="script.js"></script>
 
 </body>
-    </html>
+</html>
